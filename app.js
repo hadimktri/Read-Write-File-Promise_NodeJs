@@ -1,4 +1,6 @@
 
+const fs=require('fs');
+
 const readCSV = file => new Promise((res, rej) => !file ? rej(new Error('CSV-File not found')) :
     fs.readFile(file, 'utf8', (err, data) => err ? rej(new Error('Issue in reading the CSV-File')) : res(data)));
 
